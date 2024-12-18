@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
+</head>
+<body>
+    <div id="pagina1" class="letter-container">
+        <div class="letter">
+            <i class="fa fa-heart heart" onclick="iniciarMusicaEExibirProximaPagina('pagina1', 'pagina2')"></i>
+        </div>
+        <div class="caption">Você é a carta de amor mais linda escrita com os batimentos do meu coração.</div>
+    </div>
+
+    <div id="pagina2" class="container" style="display: none;">
+        <h1>Feliz Primeiro Ano de Namoro!</h1>
+        <img src="girassol.png" alt="Girassol" class="girassol">
+        <p class="juju">Querida Júlia,</p>
+        <p class="juju">Você é a luz da minha vida, minha fonte de alegria e o motivo do meu sorriso. Cada momento ao seu lado é especial e inesquecível.</p>
+        <p class="juju">Eu te amo mais a cada dia!</p>
+        <div class="photos">
+            <img src="foto1.jpeg" alt="Foto 1" class="photo-left">
+            <img src="foto2.jpeg" alt="Foto 2" class="photo-center">
+            <img src="foto3.jpeg" alt="Foto 3" class="photo-right">
+        </div>
+        <button onclick="mostrarProximaPagina('pagina2', 'pagina3')">Continuar</button>
+    </div>
+
+    <div id="pagina3" class="container" style="display: none;">
+        <h1>Contrato de Renovação de Namoro</h1>
+        <p>Eu, Keven Gabriel, e eu, Júlia Augusta, declaramos que desejamos renovar nosso contrato de namoro por mais 1 (um) ano. Comprometemo-nos a manter o amor, respeito e carinho mútuo, prometendo continuar a crescer e apoiar um ao outro em todas as circunstâncias</p>
+        <p><strong>Termos do Contrato:</strong></p>
+        <ul>
+            <li>Amor e Respeito: Continuar a tratar um ao outro com amor e respeito em todas as situações.</li>
+            <li>Companheirismo: Estar sempre presentes, apoiando um ao outro nos momentos bons e ruins.</li>
+            <li>Comunicação: Manter uma comunicação aberta e honesta, compartilhando nossos pensamentos e sentimentos.</li>
+            <li>Fidelidade: Permanecer fiéis e leais um ao outro.</li>
+            <li>Diversão e Aventuras: Buscar novas aventuras e momentos divertidos juntos, fortalecendo nosso vínculo.</li>
+        </ul>
+        <p>Por favor, assine abaixo para confirmar a renovação:</p>
+        <div class="signature-container">
+            <canvas id="signature-pad" width="400" height="200"></canvas>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" id="aceitar" name="aceitar" required>
+                Aceito os termos do contrato
+            </label>
+        </div>
+        <div class="button-group">
+            <button id="clear">Limpar</button>
+            <button id="submit" onclick="mostrarProximaPagina('pagina3', 'pagina4')">Prosseguir</button>
+        </div>        
+        <form id="hidden-form" action="amor.html" method="get" style="display:none;">
+            <input type="hidden" id="signature" name="signature">
+            <input type="hidden" id="assinatura" name="assinatura">
+            <input type="hidden" id="aceitar-check" name="aceitar-check">
+        </form>
+        <button class="surprise" onclick="mostrarSurpresa()">Clique para uma surpresa <i class="fa fa-gift"></i></button>
+    </div>
+
+    <div id="pagina4" class="container" style="display: none;">
+        <h1>Eu Te Amo!</h1>
+        <img src="nossa_foto.jpeg" alt="Foto nossa" class="our-photo">
+        <p class="juju">Com todo meu amor, Keke da Juju</p>
+        <img src="coração.gif" alt="GIF de amor" class="gif-rodape">
+    </div>
+
+    <audio id="background-audio" loop>
+        <source src="musica-de-fundo.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
